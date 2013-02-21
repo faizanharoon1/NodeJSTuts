@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Countries Of the world</title>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css"/>
+
+<script src="/js/jquery-1.9.0.min.js"></script>
+	<script src="/js/lp.js"></script>
+    <script type="text/javascript" src="js/utility.js"></script>
+    <script>
+		
+		/*below func Not used if we are to use routing of express JS*/
+		function MenuClick(id) {
+			
+			switch (id)
+			{
+				
+				case 1:
+				$("#main_content").load("home.html");
+				break;
+				case 2:
+				$("#main_content").load("Countries.html");
+				break;
+				}
+			
+			
+		}
+		 $(document).ready(function() {
+  
+ });
+ function setError()
+ {
+	 var values = getQueryParams();
+
+
+	 if(values['msg']!="" && values['msg']!=null)
+	 {
+		 $("#errorLogin").text("Incorrect Credentials");
+		 }
+	 
+	 }
+ function getQueryParams( val ) {
+	//Use the window.location.search if we don't have a val.
+	var query = val || window.location.search;
+	query = query.split('?')[1]
+	var pairs = query.split('&');
+	var retval = {};
+	var check = [];
+	for( var i = 0; i < pairs.length; i++ ) {
+		check = pairs[i].split('=');
+		retval[decodeURIComponent(check[0])] = decodeURIComponent(check[1]);
+	}
+
+	return retval;
+}
+	</script>
+</head>
+
+<body>
+
+<div id="wrapper">
+<div id="header">  
+<script>
+	loadheader();
+	</script>
+</div>
+
+<div  id="menu">
+ <script>
+	loadMenu();
+	</script>
+</div>
+
+<div id="main_content">
+<div class="home"> 
+<h2> Home</h2>
+<div class="leftSide" > 
+<p> 
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+<p> 
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div>
+<div  class="rightSide"> 
+<h3> Login Here</h3>
+<span title="" id="errorLogin"><script>
+	setError();
+	</script></span>
+      <form action="/login" method="post">
+
+
+<table> 
+
+<tr >
+
+<td > Username:</td>
+<td> <input name="username" type="text" /></td>
+ </tr>
+
+<td > User Password:</td>
+<td>  <input name="password" type="password" /></td>
+ </tr>
+ 
+ <td > </td>
+<td> <input type="submit" value="Login" /></td>
+ </tr>
+</table>
+ </form>
+</div>
+
+
+</div>
+
+</div>
+<br  style="clear:both;"/>
+<div id="footer">
+
+
+</div>
+
+<div>
+
+
+
+</body>
+</html>
